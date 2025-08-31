@@ -1,0 +1,6 @@
+---@class RoomInfo
+---@field RoomId string @ Unique identifier for the room.
+---@field RoomName string @ Display name of the room.
+---@field MaxPlayers integer @ Maximum number of players allowed in the room.
+---@field Settings RoomSettings @ Game settings (map, mode, etc.).
+---@field PlayersCount integer @ Current number of players in the room.

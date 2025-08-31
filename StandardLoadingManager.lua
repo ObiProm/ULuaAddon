@@ -1,0 +1,2 @@
+---@class StandardPackLoadingManager : LoadingManager
+---@field PlayerSpawned LuaEvent

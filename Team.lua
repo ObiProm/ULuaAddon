@@ -1,0 +1,10 @@
+---@class Team
+---@field Name string @ Unique name of the team (e.g. "Blue", "Team0").
+---@field Color Color @ Godot Color value representing the team's color.
+---@field MaxPlayers integer @ Maximum number of players allowed (0 = unlimited).
+---@field Players table<number> @ Set of PlayerLobby.PeerID values in this team (key-only table).
+---@field PlayersCount integer @ Current number of players in the team.
+---@field AvalibleToAddPlayer boolean @ True if team has space for more players (based on MaxPlayers).
+---@field IsAlive boolean @ True if team gas >0 HP
+---@field CurrentHealth integer @ Current health of team
+---@field MaxHealth integer @ Max health of team

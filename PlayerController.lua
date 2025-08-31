@@ -1,0 +1,3 @@
+---@class PlayerController : Node3D
+---@field Player PlayerLobby
+---@field IsLocalPlayer boolean

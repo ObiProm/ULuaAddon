@@ -1,0 +1,4 @@
+---@class RoomSettings
+---@field Map string @ The current map name (e.g. "Wild West").
+---@field GameMode string @ The current game mode (e.g. "Standard").
+---@field Modifiers table<string, boolean> @ Custom settings like "Divided money" → false.

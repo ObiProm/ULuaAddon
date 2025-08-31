@@ -1,0 +1,2 @@
+---@class Resource
+local Resource = {}

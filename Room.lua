@@ -1,0 +1,10 @@
+---@class Room
+---@field Info RoomInfo @ Basic metadata about the room.
+---@field PlayersCount integer @ Read-only: current number of connected players.
+---@field Players table<number, PlayerLobby> @ Map of PeerID → PlayerLobby instances.
+---@field Teams table<string, Team> @ Map of team name → Team instance.
+---@field Password string @ Room password; empty string means no password.
+---@field IsVisible boolean @ Whether the room appears in the public room list.
+---@field GameStarted boolean @ True if the game has started and players can no longer join.
+---@field Admin PlayerLobby @ The player who owns/created the room.
+---@field BecomeEmpty LuaEvent @ Event callback triggered when the last player leaves the room.
