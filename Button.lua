@@ -1,0 +1,12 @@
+---@class Button : BaseButton
+---@field Text string Button text label.
+---@field Icon Texture2D|nil Icon texture displayed next to the text.
+---@field IconAlignment integer Icon alignment (0=left, 1=right, 2=top, 3=bottom).
+---@field VerticalIconAlignment integer Vertical icon alignment.
+---@field ExpandIcon boolean If true, icon expands to fill available space.
+---@field Flat boolean If true, button has no background decoration.
+---@field ClipText boolean If true, text is clipped when exceeding button width.
+---@field TextOverrunBehavior integer How text overflows (0=clip, 1=ellipsis).
+---@field AutowrapMode integer Text autowrap mode.
+---@field Pressed LuaEvent Event triggered when the button is pressed.
+local Button = {}

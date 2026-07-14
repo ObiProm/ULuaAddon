@@ -73,8 +73,9 @@ function game.PrintTableKeys(tbl) end
 function game.RegisterClass(className, classTable, baseType) end
 
 ---Creates a new instance of a registered Lua class
----@param className string Name of the registered class or Godot node type
----@return table
+---@generic T
+---@param className `T` Name of the registered class or Godot node type
+---@return T
 function game.CreateNode(className) end
 
 ---Binds an existing Godot node to a Lua class
@@ -106,3 +107,10 @@ function game.CreateZombie(zombieID) end
 ---@param className string
 ---@return userdata
 function game.CreateUserdata(className) end
+
+---Registers a Lua class and add to submodules list
+---@param className string Name of the class to register
+---@param classTable table Table containing class methods and properties
+function game.RegisterSubmodule(className, classTable)
+    
+end

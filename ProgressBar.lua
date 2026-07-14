@@ -1,5 +1,3 @@
----@class ProgressBar : Control
----@field Text string
----@field MaxValue number
----@field Value number
+---@class ProgressBar : Range
+---@field ShowPercentage boolean If true, shows percentage text.
 local ProgressBar = {}

@@ -1,0 +1,12 @@
+---@class TextureProgressBar : Range
+---@field Texture Texture2D|nil Full texture (100% filled).
+---@field UnderTexture Texture2D|nil Background texture (empty state).
+---@field ProgressTexture Texture2D|nil Progress overlay texture.
+---@field TintUnder Color Tint color for the under texture.
+---@field TintOver Color Tint color for the progress overlay.
+---@field TintProgress Color Tint color for the progress.
+---@field RadialFill boolean If true, fills radially.
+---@field RadialInitialAngle number Initial angle for radial fill.
+---@field RadialCenterOffset Vector2 Center offset for radial fill.
+---@field FillMode integer Fill mode for linear progress.
+local TextureProgressBar = {}

@@ -1,4 +1,4 @@
----@class SettingsManagers
+---@class SettingsManager
 ---@field OnSettingChanged LuaEvent Event triggered when a game setting changes. Parameters: (settingId: string, value: any)
 SettingsManager = {}
 

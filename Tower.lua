@@ -4,14 +4,19 @@
 ---`OnUpgradeMenuClosed(UpgradeMenuUI upgradeMenuUI)`<br>
 ---`PopulateUpgradeMenuButtons(UpgradeMenuUI upgradeMenu, Control additionalButtonsContainer, Control bottomIconContainer)`<br>
 ---@class Tower : Node3D
----@field OwnerPlayer PlayerLobby
----@field CurrentRoom Room
----@field OwnerName string
----@field Health integer
----@field MaxHealth integer
----@field IsSellable boolean
----@field SellPrice integer
----@field IsSelectedByUpgradeMenu boolean
+---@field TowerType string Given id to identify tower type and display it using stats written in config. Used for synchronization, persistence, and lookup. Default: empty string.
+---@field OwnerPeerID integer Peer ID of the player who owns the tower. 0 means no owner (e.g., before placement).
+---@field OwnerName string Display name of the tower's owner. Synchronized on placement or ownership change.
+---@field CurrentRoom Room The room this tower belongs to. Defines the network sync context.
+---@field Team Team The team this tower belongs to. Affects interactions with enemies and allies.
+---@field Health integer Current health of the tower. When reaches 0, the tower is destroyed. Default: 100.
+---@field MaxHealth integer Maximum health. If set to 0, the tower becomes invincible. Default: 100.
+---@field IsSellable boolean Whether the tower can be sold. Default: true.
+---@field SellPrice integer Sell price as a percentage of build cost. CAN BE SETTED ONLY AT SERVER.
+---@field IsSelectedByUpgradeMenu boolean true if an upgrade menu is currently open for this tower.
+---@field CurrentOpenedUpgradeMenu UpgradeMenuUI|nil Reference to the currently active upgrade menu UI instance.
+---@field UpgradePathsCount integer Number of upgrade paths initialized for this tower.
+---@field EnableDefaultSellPriceCount boolean If true, SellPrice is auto-calculated based on upgrade progress. Default: true. CAN BE SETTED ONLY AT SERVER.
 local Tower = {}
 
 ---@return boolean
@@ -27,6 +32,23 @@ function Tower:SpawnRangeIndicator(name, range, color) end
 
 ---@param name string
 function Tower:RemoveRangeIndicator(name) end
+
+---Will call upgrade request on client to server, don't call it if IsLocalForRoom(room) is false.
+---@param pathIndex number Index of upgrade path.
+function Tower:ApplyUpgrade(pathIndex) end
+
+---Will block upgrade path to upgrade.
+---@param pathIndex number Index of upgrade path.
+function Tower:LockPath(pathIndex) end
+
+---Will unblock upgrade path to upgrade.
+---@param pathIndex number Index of upgrade path.
+function Tower:UnlockPath(pathIndex) end
+
+---Checks is path locked
+---@param pathIndex number Index of upgrade path.
+---@return boolean Is path locked.
+function Tower:IsPathLocked(pathIndex) end
 
 --- Virtual function, calls when preview placed
 function Tower:OnPreviewPlaced() end

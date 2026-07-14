@@ -1,4 +1,8 @@
 ---@class Room
+---@field RoomId string @ Unique identifier for the room.
+---@field RoomName string @ Display name of the room.
+---@field MaxPlayers integer @ Maximum number of players allowed.
+---@field Settings RoomSettings @ Game settings (map, mode, etc.).
 ---@field Info RoomInfo @ Basic metadata about the room.
 ---@field PlayersCount integer @ Read-only: current number of connected players.
 ---@field Players table<number, PlayerLobby> @ Map of PeerID → PlayerLobby instances.

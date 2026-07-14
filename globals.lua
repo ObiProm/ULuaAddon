@@ -25,9 +25,10 @@ function IsServer() end
 
 ---Checks is running application is client in current room (Server is also client if he joined room)
 ---@param room Room
+---@return boolean
 function IsLocalForRoom(room) end
 
----@return integer
+---@return number
 function GetUniqueId() end
 
 ---Returns local `PlayerLobby`
@@ -35,5 +36,5 @@ function GetUniqueId() end
 function LocalPlayer() end
 
 ---@param path string
----@return Resource
+---@return any
 function LoadResource(path) end

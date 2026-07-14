@@ -1,0 +1,11 @@
+---@class TextureButton : BaseButton
+---@field TextureNormal Texture2D|nil Normal state texture.
+---@field TextureHover Texture2D|nil Hover state texture.
+---@field TexturePressed Texture2D|nil Pressed state texture.
+---@field TextureDisabled Texture2D|nil Disabled state texture.
+---@field TextureFocused Texture2D|nil Focused state texture.
+---@field IgnoreTextureSize boolean If true, texture is stretched to button size.
+---@field StretchMode integer Stretch mode for the texture.
+---@field FlipH boolean If true, texture is flipped horizontally.
+---@field FlipV boolean If true, texture is flipped vertically.
+local TextureButton = {}

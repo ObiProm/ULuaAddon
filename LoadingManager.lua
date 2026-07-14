@@ -28,6 +28,7 @@ function LoadingManager.ServerBaseLoaded() end
 function LoadingManager.ServerReadyRequest() end
 
 ---Calls on SERVER when game node for room is initizlized and LoadingManager is ready to work
+---@param room Room
 function LoadingManager.Initialize(room) end
 
 ---Sends game data to player with ID

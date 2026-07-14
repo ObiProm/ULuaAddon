@@ -1,0 +1,25 @@
+---@class Sprite3D : Node3D
+---@field Texture Texture2D|nil The texture to display.
+---@field Centered boolean If true, texture is centered at origin.
+---@field Offset Vector2 Texture offset from origin.
+---@field FlipH boolean If true, texture is flipped horizontally.
+---@field FlipV boolean If true, texture is flipped vertically.
+---@field Hframes integer Number of horizontal frames for spritesheet.
+---@field Vframes integer Number of vertical frames for spritesheet.
+---@field Frame integer Current frame index.
+---@field FrameCoords Vector2i Current frame coordinates in spritesheet.
+---@field RegionEnabled boolean If true, uses a region of the texture.
+---@field RegionRect Rect2 Region rectangle to use from texture.
+---@field Modulate Color Color modulation.
+---@field ModulateColor Color Alias for Modulate.
+---@field PixelSize number Size of one pixel in world units.
+---@field Axis integer Billboard axis (0=X, 1=Y, 2=Z).
+---@field BillboardMode integer Billboard mode (0=disabled, 1=enabled, 2=fixed Y, 3=particles).
+---@field DoubleSided boolean If true, renders from both sides.
+---@field Transparent boolean If true, enables transparency.
+---@field Shaded boolean If true, receives lighting.
+---@field FixedSize boolean If true, size is fixed regardless of distance.
+---@field AlphaCut integer Alpha cut mode (0=disabled, 1=discard, 2=opaque, 3=opaque prepass).
+---@field TextureFilter integer Texture filter mode.
+---@field AlphaScissorThreshold number Alpha scissor threshold.
+local Sprite3D = {}
