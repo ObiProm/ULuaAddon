@@ -1,5 +1,7 @@
 ---@diagnostic disable: missing-return
 ---@class game
+---@field GameVersion string
+---@field OnClassRegistered LuaEvent Invoked when class was registered with game.RegisterClass(...). Parameters: (string name, table table)
 game = {}
 
 ---@param object userdata
@@ -9,6 +11,15 @@ function game.GetUserdataName(object) end
 ---@param className string
 ---@return boolean
 function game.IsClassRegistered(className) end
+
+---Gets table of registered class
+---@param name string Name of class
+---@return table A table of class
+function game.GetClassTable(name) end
+
+---Gets meta table of Node
+---@return table A table of Node
+function game.GetNodeTable() end
 
 ---@return Node
 function game.GetRoot() end
@@ -43,6 +54,16 @@ function game.GetWaveParser() end
 
 ---@return LuaEvent
 function game.CreateEvent() end
+
+---Creates condition that can be checked by game.IsConditionComplete(name)
+---@param name string Condition name
+---@param func fun(): boolean Condition function. Must return boolean
+function game.CreateCondition(name, func) end
+
+---Checks whether a condition created with game.CreateCondition is complete
+---@param name string Condition name
+---@return boolean Is condition complete
+function game.IsConditionComplete(name) end
 
 ---@return string
 function game.NewStringGUID() end

@@ -4,6 +4,7 @@
 ---@field Speed number Speed of zombie. Default: 2.
 ---@field Type string Name, which will be displayed on hover on zombie (if InfoShower was added).
 ---@field CurrentRoom Room Room which zombie belongs.
+---@field CurrentTeam Team Room which zombie belongs.
 ---@field OnDamageReceived LuaEvent Calls when zombie gets damage from tower. Parameters: (Tower tower, integer count)
 ---@field OnPathEnded LuaEvent Calls when zombie finishes their path.
 ---@field OnDeath LuaEvent Calls when zombie dies.

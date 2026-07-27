@@ -89,18 +89,6 @@ function Node:GetNodeOrNull(path) end
 ---@return Node|nil
 function Node.GetNodeOrNull(path) end
 
---- Sets the name of the node.
----@param name string
-function Node:SetName(name) end
----@param name string
-function Node.SetName(name) end
-
---- Gets the name of the node.
----@return string
-function Node:GetName() end
----@return string
-function Node.GetName() end
-
 --- Propagates ownership to children (used internally in editor).
 function Node:PropagateOwnership() end
 function Node.PropagateOwnership() end

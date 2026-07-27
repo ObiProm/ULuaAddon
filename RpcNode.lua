@@ -1,4 +1,4 @@
----@class RpcNode . Node
+---@class RpcNode : Node
 ---@field SenderId number
 local RpcNode = {}
 

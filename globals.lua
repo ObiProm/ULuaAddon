@@ -23,6 +23,10 @@ function Color(r, g, b) end
 ---@return boolean
 function IsServer() end
 
+---Checks if the current instance is running as a singleplayer
+---@return boolean
+function IsSingleplayer() end
+
 ---Checks is running application is client in current room (Server is also client if he joined room)
 ---@param room Room
 ---@return boolean
