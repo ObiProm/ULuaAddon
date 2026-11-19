@@ -3,7 +3,6 @@
 ---@field RoomName string @ Display name of the room.
 ---@field MaxPlayers integer @ Maximum number of players allowed.
 ---@field Settings RoomSettings @ Game settings (map, mode, etc.).
----@field Info RoomInfo @ Basic metadata about the room.
 ---@field PlayersCount integer @ Read-only: current number of connected players.
 ---@field Players table<number, PlayerLobby> @ Map of PeerID → PlayerLobby instances.
 ---@field Teams table<string, Team> @ Map of team name → Team instance.

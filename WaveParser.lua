@@ -1,6 +1,7 @@
 ---@class WaveParser : Node
 ---@field CurrentWaveNumber integer The number of the currently active wave (read-only).
 ---@field TotalWaves integer The total number of loaded waves (read-only).
+---@field AllEnemiesSpawned boolean Whether all enemies for the current wave have been spawned (read-only).
 ---@field AsTable table MoonSharp Lua table representation of this parser instance (read-only).
 ---@field OnWaveStarted LuaEvent Emitted when a new wave begins. Parameters: (integer waveNumber, WaveData waveData)
 ---@field OnWavesEnded LuaEvent Emitted when all configured waves have been completed.
@@ -10,10 +11,10 @@ local WaveParser = {}
 ---Begins the wave sequence from the first wave. Resets the internal wave counter and triggers the first wave immediately.
 function WaveParser:StartWaves() end
 
----Manually loads and registers wave data from a string resource.
+---Loads and registers wave data from a file.
 ---@param wave integer The wave number to assign this data to.
----@param fileKey string The key/identifier of the string resource containing the wave text data.
-function WaveParser:AddWave(wave, fileKey) end
+---@param filePath string Path using the same schemes as FileAccess.
+function WaveParser:AddWave(wave, filePath) end
 
 ---Manually overrides the timer for the next wave.
 ---@param time number The time in seconds to wait before the next wave starts.

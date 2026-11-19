@@ -28,6 +28,12 @@ function StandardTower:RpcChangeTarget(newTarget) end
 ---@param node Node Node to become a model
 function StandardTower:LoadModel(node) end
 
+---Gets multiple targets using the selected targeting priority.
+---@param count number
+---@param targetPriority TargetPriority
+---@return table<Zombie>
+function StandardTower:GetTargets(count, targetPriority) end
+
 ---Virtual function, calls every towers shot
 ---@param zombie Zombie
 function StandardTower:OnShot(zombie) end
@@ -35,3 +41,9 @@ function StandardTower:OnShot(zombie) end
 ---Virtual function, overrides default shot
 ---@param zombie Zombie
 function StandardTower:ProcessShot(zombie) end
+
+---@param zombie Zombie
+function StandardTower:OnZombieEnteredRange(zombie) end
+
+---@param zombie Zombie
+function StandardTower:OnZombieExitedRange(zombie) end

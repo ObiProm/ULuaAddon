@@ -1,0 +1,11 @@
+---@class PathFollow3D : Node3D
+---@field Progress number Distance along the parent Path3D curve.
+---@field ProgressRatio number Position along the path from 0 to 1.
+---@field HOffset number Horizontal offset from the path.
+---@field VOffset number Vertical offset from the path.
+---@field RotationMode integer Rotation mode used while following the path.
+---@field CubicInterp boolean Whether cubic interpolation is used.
+---@field Loop boolean Whether progress wraps at the end of the path.
+---@field TiltEnabled boolean Whether curve tilt affects rotation.
+---@field UseModelFront boolean Whether the model's forward axis is used.
+local PathFollow3D = {}

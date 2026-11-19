@@ -13,9 +13,9 @@ function Vector3(X, Y, Z) end
 ---@return Vector2
 function Vector2(X, Y) end
 
----@param r integer
----@param g integer
----@param b integer
+---@param r number
+---@param g number
+---@param b number
 ---@return Color
 function Color(r, g, b) end
 
@@ -32,7 +32,7 @@ function IsSingleplayer() end
 ---@return boolean
 function IsLocalForRoom(room) end
 
----@return number
+---@return integer
 function GetUniqueId() end
 
 ---Returns local `PlayerLobby`
@@ -42,3 +42,14 @@ function LocalPlayer() end
 ---@param path string
 ---@return any
 function LoadResource(path) end
+
+---@param time number
+---@param func function
+function CreateTimer(time, func) end
+
+---@param scale number
+function SetTimeSpeed(scale) end
+
+---@param feature string
+---@return boolean
+function HasFeature(feature) end

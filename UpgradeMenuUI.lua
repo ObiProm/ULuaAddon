@@ -16,8 +16,8 @@ function UpgradeMenuUI:SetUpgradeDescriptionText(text) end
 ---@param text string
 function UpgradeMenuUI:SetUpgradeButtonText(text) end
 
----@param func function
-function UpgradeMenuUI:SetUpgradSetUpgradeButtonCallbackeButtonText(func) end
+---@param closure function
+function UpgradeMenuUI:SetUpgradeButtonCallback(closure) end
 
 ---@param disabled boolean
 function UpgradeMenuUI:SetDisabledUpgrade(disabled) end

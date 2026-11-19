@@ -49,21 +49,11 @@ function game.GetUIPacked() end
 ---@return PackedScene
 function game.GetPlayerPacked() end
 
----@return table
+---@return WaveParser
 function game.GetWaveParser() end
 
 ---@return LuaEvent
 function game.CreateEvent() end
-
----Creates condition that can be checked by game.IsConditionComplete(name)
----@param name string Condition name
----@param func fun(): boolean Condition function. Must return boolean
-function game.CreateCondition(name, func) end
-
----Checks whether a condition created with game.CreateCondition is complete
----@param name string Condition name
----@return boolean Is condition complete
-function game.IsConditionComplete(name) end
 
 ---@return string
 function game.NewStringGUID() end
@@ -125,6 +115,10 @@ function game.JsonToTable(json) end
 ---@return Zombie
 function game.CreateZombie(zombieID) end
 
+---@param zombieID string
+---@return table
+function game.GetZombieConfig(zombieID) end
+
 ---@param className string
 ---@return userdata
 function game.CreateUserdata(className) end
@@ -132,6 +126,7 @@ function game.CreateUserdata(className) end
 ---Registers a Lua class and add to submodules list
 ---@param className string Name of the class to register
 ---@param classTable table Table containing class methods and properties
-function game.RegisterSubmodule(className, classTable)
+---@param baseType? string Base Godot node type. Defaults to Node.
+function game.RegisterSubmodule(className, classTable, baseType)
     
 end

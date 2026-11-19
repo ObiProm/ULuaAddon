@@ -3,9 +3,10 @@
 ---`OnUpgradeMenuOpened(UpgradeMenuUI upgradeMenuUI)`<br>
 ---`OnUpgradeMenuClosed(UpgradeMenuUI upgradeMenuUI)`<br>
 ---`PopulateUpgradeMenuButtons(UpgradeMenuUI upgradeMenu, Control additionalButtonsContainer, Control bottomIconContainer)`<br>
----@class Tower : Node3D
+---@class Tower : GameEntity
 ---@field TowerType string Given id to identify tower type and display it using stats written in config. Used for synchronization, persistence, and lookup. Default: empty string.
 ---@field OwnerPeerID integer Peer ID of the player who owns the tower. 0 means no owner (e.g., before placement).
+---@field IsTowerPlaced boolean Whether the placement lifecycle has completed.
 ---@field OwnerName string Display name of the tower's owner. Synchronized on placement or ownership change.
 ---@field CurrentRoom Room The room this tower belongs to. Defines the network sync context.
 ---@field Team Team The team this tower belongs to. Affects interactions with enemies and allies.
@@ -22,6 +23,8 @@ local Tower = {}
 ---@return boolean
 function Tower:CanPlace() end
 
+function Tower:SetupSynchronizer() end
+
 ---@param table table
 function Tower:BindLuaTable(table) end
 
@@ -32,6 +35,10 @@ function Tower:SpawnRangeIndicator(name, range, color) end
 
 ---@param name string
 function Tower:RemoveRangeIndicator(name) end
+
+---@param pathIndex integer Index of the upgrade path.
+---@return integer Current level on the path, or 0 if it has not been upgraded.
+function Tower:GetCurrentUpgradeLevel(pathIndex) end
 
 ---Will call upgrade request on client to server, don't call it if IsLocalForRoom(room) is false.
 ---@param pathIndex number Index of upgrade path.
@@ -56,6 +63,11 @@ function Tower:OnPreviewPlaced() end
 --- Virtual function, calls when tower placed
 function Tower:OnTowerPlaced() end
 
+---Called before opening the upgrade menu. Return false to prevent it from opening.
+---@param upgradeMenuUI UpgradeMenuUI
+---@return boolean?
+function Tower:PreUpgradeMenuOpen(upgradeMenuUI) end
+
 ---Virtual function, calls when upgrade menu opened
 ---@param upgradeMenuUI UpgradeMenuUI
 function Tower:OnUpgradeMenuOpened(upgradeMenuUI) end
@@ -68,7 +80,7 @@ function Tower:OnUpgradeMenuClosed(upgradeMenuUI) end
 ---@param upgradeMenuUI UpgradeMenuUI
 function Tower:PreProcessUpgrade(upgradeMenuUI) end
 
----Calls on CLIENTs when tower upgraded
+---Calls when tower upgraded
 ---@param upgradeMenuUI UpgradeMenuUI
 function Tower:TowerUpgradePrecessed(upgradeMenuUI) end
 
